@@ -1,0 +1,94 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 36ddbcc8893d39f78f8bbc59c1d54a7c8b1b6935e7f1bd57f94caeaba5969baa
+name:           hw3
+version:        0.1.0.0
+build-type:     Simple
+
+executable hw3
+  main-is: Main.hs
+  hs-source-dirs:
+      src
+    , app
+  other-modules:
+      Core.Types
+    , Core.CommandProcessing
+    , TUI.Types
+    , TUI.Runner
+    , CLI.Types
+    , CLI.Runner
+    , ArgumentParser
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base < 5
+      , directory
+      , filepath
+      , mtl
+      , optparse-applicative
+      , extra
+      , brick
+      , vty
+      , microlens
+      , vector
+      , text
+      , cursor
+      , time
+  default-language: Haskell2010
+  
+library
+  exposed-modules:
+      Core.Types
+    , Core.CommandProcessing
+    , TUI.Types
+    , TUI.Runner
+    , CLI.Types
+    , CLI.Runner
+    , ArgumentParser
+  other-modules:
+      Paths_hw3
+  hs-source-dirs:
+      src
+      , app
+      , test
+  build-depends:
+      base < 5
+      , directory
+      , filepath
+      , mtl
+      , optparse-applicative
+      , extra
+      , brick
+      , vty
+      , microlens
+      , vector
+      , text
+      , cursor
+      , time
+  default-language: Haskell2010
+
+test-suite hw3-test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test
+  other-modules:
+      Types
+    , FileSystemSpec
+    , Tree
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+      , mtl
+      , hw3
+      , hspec
+      , tasty
+      , tasty-hspec
+      , tasty-discover
+      , time
+      , directory
+      , unordered-containers
+  default-language: Haskell2010
